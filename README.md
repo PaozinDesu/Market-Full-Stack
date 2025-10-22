@@ -1,59 +1,139 @@
-# DTI-Technical-Challange
-⚙️ Configuração do Backend
+🛒 DTI Technical Challenge
 
-1️⃣ Acesse a pasta do backend
+Bem-vindo(a) ao DTI Technical Challenge!
+Este projeto é composto por um backend (Node.js + Express + Prisma + SQLite) e um frontend (Next.js + React + TypeScript).
+Siga os passos abaixo para configurar e executar o projeto corretamente. 🚀
+
+⚙️ Pré-requisitos
+
+Antes de começar, certifique-se de ter instalado em sua máquina:
+
+Node.js (v18+ recomendado)
+
+npm (ou yarn, se preferir)
+
+Git
+
+Uma IDE de sua preferência (ex: VS Code)
+
+📂 Clonando o projeto
+
+Abra o terminal na pasta onde deseja salvar o projeto, por exemplo:
+
+cd "C:\Users\User\Documents\Projetos"
+
+
+E clone o repositório:
+
+git clone https://github.com/PaozinDesu/DTI-Technical-Challange.git
+cd DTI-Technical-Challange
+code .
+
+🧠 Organização dos Terminais
+
+Para facilitar o desenvolvimento, abra 3 terminais na sua IDE.
+
+🖥️ Terminal 1 – Banco de Dados (Prisma Studio)
+
+1️⃣ Acesse a pasta do backend:
 
 cd server
 
-2️⃣ Instale as dependências
+
+2️⃣ Instale as dependências:
 
 npm install
 
-3️⃣ Crie o banco de dados e gere o Prisma Client
+
+3️⃣ Crie um arquivo .env na raiz da pasta server com o seguinte conteúdo:
+
+DATABASE_URL="file:./dev.db"
+
+
+4️⃣ Gere o banco de dados e o Prisma Client:
 
 npx prisma migrate dev --name init
 
-4️⃣ adicione os produtos ao banco de dados
+
+5️⃣ Popule o banco de dados com produtos iniciais:
 
 npm run seed
 
-👉 Isso cria o arquivo dev.db e o cliente Prisma.
 
-5️⃣ Rode o servidor
+6️⃣ Inicie o Prisma Studio (interface visual do banco de dados):
+
+npx prisma studio
+
+
+Acesse em:
+🔗 http://localhost:5555
+
+⚡ Terminal 2 – Backend (API)
+
+1️⃣ Acesse novamente a pasta do backend:
+
+cd server
+
+
+2️⃣ Inicie o servidor:
 
 npm run dev
 
-Por padrão, o backend será iniciado em:
 
-http://localhost:4000
+O backend ficará disponível em:
+🔗 http://localhost:4000
 
-💻 Configuração do Frontend
+💻 Terminal 3 – Frontend (Next.js)
 
-1️⃣ Acesse a pasta do frontend
+1️⃣ Acesse a pasta do frontend:
 
-cd ../wwww
+cd www
 
-2️⃣ Instale as dependências
+
+2️⃣ Instale as dependências:
 
 npm install
 
-3️⃣ Rode o frontend
+
+3️⃣ Execute o frontend:
 
 npm run dev
 
 
 O frontend será iniciado em:
+🔗 http://localhost:3000
 
-http://localhost:3000
+🧩 Utilizando o projeto
 
-🔗 Conectando Frontend e Backend
+Agora é só abrir o navegador e acessar:
+👉 http://localhost:3000
 
-Quando ambos os servidores estiverem rodando:
+Você poderá:
 
-O frontend (Next.js) estará em http://localhost:3000
+🛍️ Adicionar produtos ao carrinho
 
-O backend (Express) estará em http://localhost:4000
+➕ Alterar quantidades
 
-As requisições do frontend (Axios ou Fetch) devem usar a URL base configurada (NEXT_PUBLIC_API_URL).
+💳 Finalizar compras
 
-Exemplo:
+🧾 Acompanhar as alterações diretamente no Prisma Studio
+
+🧰 Tecnologias Utilizadas
+
+Backend
+
+Node.js + Express
+
+TypeScript
+
+Prisma ORM
+
+SQLite
+
+Frontend
+
+Next.js + React
+
+TypeScript
+
+Tailwind CSS (opcional, se utilizado)

@@ -6,6 +6,6 @@ export class CreateOrderController {
     const service = new CreateOrderService();
     const createdOrder = service.execute(req.socket.remoteAddress!);
 
-    return res.status(200).json(createdOrder);
+    return res.status(201).json(createdOrder);
   };
 }

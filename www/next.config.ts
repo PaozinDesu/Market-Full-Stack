@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+import path from 'node:path';
+
+const rootDir = path.resolve(__dirname);
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  turbopack: {
+    root: rootDir,
+  },
 };
 
 export default nextConfig;

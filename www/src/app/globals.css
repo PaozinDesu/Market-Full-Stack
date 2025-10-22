@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -19,8 +19,25 @@
   }
 }
 
+p {
+  cursor: default;
+}
+
+.icons,
+h1 {
+  cursor: pointer;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  height: 100dvh;
+}
+
+.mainText {
+@apply text-xl font-medium text-zinc-900
+}
+
+.secundaryText{
+ @apply text-base font-medium text-slate-500
 }

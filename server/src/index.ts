@@ -1,18 +1,35 @@
-import bodyParser from "body-parser";
+import bodyParser from 'body-parser';
 import cors from 'cors';
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { ErrorHandler } from './handlers/error.handler';
+import { prisma } from './lib/prisma';
+import { registerCartsRoutes } from './routes/carts.routes';
+import { registerCategoriesRoutes } from './routes/categories.routes';
+import { registerProductsRoutes } from './routes/products.routes';
+import { registerSubCategoriesRoutes } from './routes/subCategories.routes';
 
-const app = express();
-const port = process.env.PORT || 3000;
+function bootstrap() {
+  const app = express();
+  const port = process.env.PORT || 4000;
 
-app.use(cors({origin: '*'}))
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}))
+  app.use(cors({ origin: '*' }));
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req: Request, res: Response) => {
- res.json({ message: 'Welcome to the Express + TypeScript Server!' });
-});
+  registerProductsRoutes(app);
+  registerCategoriesRoutes(app);
+  registerSubCategoriesRoutes(app);
+  registerCartsRoutes(app);
 
-app.listen(port, () => {
- console.log(`Server is running at http://localhost:${port}`);
-});
+  app.use(new ErrorHandler().handle);
+
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
+
+  process.on('beforeExit', async () => {
+    prisma.$disconnect();
+  });
+}
+
+bootstrap();

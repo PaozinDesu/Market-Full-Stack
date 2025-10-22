@@ -28,6 +28,7 @@ Por padrão, o backend será iniciado em:
 http://localhost:4000
 
 💻 Configuração do Frontend
+
 1️⃣ Acesse a pasta do frontend
 
 cd ../wwww
@@ -36,17 +37,8 @@ cd ../wwww
 
 npm install
 
-3️⃣ Configure a URL do backend
+3️⃣ Rode o frontend
 
-Crie um arquivo .env.local na raiz do frontend:
-
-NEXT_PUBLIC_API_URL=http://localhost:4000
-
-No código, use esta variável para chamadas HTTP (por exemplo, com Axios):
-
-export default api;
-
-4️⃣ Rode o frontend
 npm run dev
 
 

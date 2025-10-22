@@ -10,10 +10,10 @@ Siga os passos abaixo para configurar e executar o projeto corretamente. 🚀
 
 Antes de começar, certifique-se de ter instalado em sua máquina:
 
-- **Node.js** (v18+ recomendado)  
+- **[Node.js](https://nodejs.org/en/download)** (v18+ recomendado) 
 - **npm** (ou **yarn**, se preferir)  
-- **Git**
-- Uma **IDE** de sua preferência (ex: VS Code)
+- **[Git](https://git-scm.com/install/)**
+- Uma **IDE** de sua preferência (ex: [VS Code](https://code.visualstudio.com/download))
 
 ---
 
@@ -22,7 +22,7 @@ Antes de começar, certifique-se de ter instalado em sua máquina:
 Abra o terminal na pasta onde deseja salvar o projeto, por exemplo:
 
 ```bash
-cd "C:\Users\User\Documents\Projetos"
+cd "C:\Users\SEU_USUARIO\Documents\Projetos"
 ```
 
 E clone o repositório:
@@ -32,6 +32,10 @@ git clone https://github.com/PaozinDesu/DTI-Technical-Challange.git
 cd DTI-Technical-Challange
 code .
 ```
+
+Uma nova janela do Visual Studio Code será aberta — você pode fechar a anterior.
+
+Caso não esteja usando o Visual Studio Code, basta abrir a pasta gerada pelo clone com sua IDE.
 
 ---
 
@@ -152,11 +156,4 @@ Você poderá:
 **Frontend**
 - Next.js + React  
 - TypeScript  
-- Tailwind CSS (opcional, se utilizado)
-
----
-
-## 🧑‍💻 Autor
-
-**[PaozinDesu](https://github.com/PaozinDesu)**  
-💼 Desafio Técnico – DTI  
+- Tailwind CSS

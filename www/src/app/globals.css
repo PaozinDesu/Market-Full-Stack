@@ -35,9 +35,27 @@ body {
 }
 
 .mainText {
-@apply text-xl font-medium text-zinc-900
+  @apply text-xl font-medium text-zinc-900;
 }
 
-.secundaryText{
- @apply text-base font-medium text-slate-500
+.secundaryText {
+  @apply text-base font-medium text-slate-500;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
 }

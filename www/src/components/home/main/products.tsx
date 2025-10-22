@@ -18,7 +18,10 @@ const Products: React.FC<ProductsProps> = ({
   const { products, pagination, page, setPage } = useProducts();
   const { cartItems, handleFetchCartItems } = useCart();
 
-  useEffect(() => {}, [cartModalOpened, handleFetchCartItems]);
+  useEffect(() => {
+    if (cartModalOpened) return;
+    handleFetchCartItems();
+  }, [cartModalOpened]);
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden overflow-y-scroll rounded-t-2xl bg-slate-200 py-6">

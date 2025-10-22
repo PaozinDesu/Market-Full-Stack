@@ -8,12 +8,16 @@ export function useCart() {
   const [cartItems, setCartItems] = useState<ICart[]>([]);
 
   useEffect(() => {
+    handleFetchCartItems();
+  }, []);
+
+  function handleFetchCartItems() {
     api.get<ICartResponse>('/carts').then((res) => {
       const data = res.data;
       const cartItems = data.result;
       setCartItems(cartItems);
     });
-  }, []);
+  }
 
-  return { cartItems };
+  return { cartItems, handleFetchCartItems };
 }

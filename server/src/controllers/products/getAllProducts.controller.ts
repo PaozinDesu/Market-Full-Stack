@@ -3,8 +3,6 @@ import { GetAllProductsService } from '../../services/products/getAllProducts.se
 
 export class GetAllProductsController {
   handle = async (req: Request, res: Response) => {
-    console.log('teste');
-    console.log('teste');
     const page = Number.parseInt(req.query.page as string) || 1;
     const limit = Number.parseInt(req.query.limit as string) || 10;
 

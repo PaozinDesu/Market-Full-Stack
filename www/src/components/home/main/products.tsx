@@ -1,19 +1,38 @@
 'use client';
 
 import { Card } from '@/components/cards';
+import { useCart } from '@/hooks/useCart';
 import { useProducts } from '@/hooks/useProducts';
 import { MoveLeft, MoveRight } from 'lucide-react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
-const Products: React.FC = () => {
+interface ProductsProps {
+  cartModalOpened: boolean;
+  setCartModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Products: React.FC<ProductsProps> = ({
+  cartModalOpened,
+  setCartModalOpened,
+}) => {
   const { products, pagination, page, setPage } = useProducts();
+  const { cartItems, handleFetchCartItems } = useCart();
+
+  useEffect(() => {
+    handleFetchCartItems();
+  }, [cartModalOpened, handleFetchCartItems]);
 
   return (
     <div className="flex flex-col items-center overflow-x-hidden overflow-y-scroll bg-slate-200 py-6">
       <div className="grid grid-cols-3 gap-x-12 gap-y-8">
         {products.map((product) => (
           <div key={product.id}>
-            <Card product={product} />
+            <Card
+              product={product}
+              cartItems={cartItems}
+              handleFetchCartItems={handleFetchCartItems}
+              setCartModalOpened={setCartModalOpened}
+            />
           </div>
         ))}
       </div>

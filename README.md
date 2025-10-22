@@ -1,5 +1,6 @@
 # DTI-Technical-Challange
 ⚙️ Configuração do Backend
+
 1️⃣ Acesse a pasta do backend
 cd server
 

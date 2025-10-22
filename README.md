@@ -2,30 +2,38 @@
 ⚙️ Configuração do Backend
 
 1️⃣ Acesse a pasta do backend
+
 cd server
 
 2️⃣ Instale as dependências
+
 npm install
 
 3️⃣ Crie o banco de dados e gere o Prisma Client
+
 npx prisma migrate dev --name init
 
 4️⃣ adicione os produtos ao banco de dados
+
 npm run seed
 
 👉 Isso cria o arquivo dev.db e o cliente Prisma.
 
 5️⃣ Rode o servidor
+
 npm run dev
 
 Por padrão, o backend será iniciado em:
+
 http://localhost:4000
 
 💻 Configuração do Frontend
 1️⃣ Acesse a pasta do frontend
+
 cd ../wwww
 
 2️⃣ Instale as dependências
+
 npm install
 
 3️⃣ Configure a URL do backend

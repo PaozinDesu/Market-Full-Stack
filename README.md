@@ -52,7 +52,7 @@ Quando ambos os servidores estiverem rodando:
 
 O frontend (Next.js) estará em http://localhost:3000
 
-O backend (Express) estará em http://localhost:3333
+O backend (Express) estará em http://localhost:4000
 
 As requisições do frontend (Axios ou Fetch) devem usar a URL base configurada (NEXT_PUBLIC_API_URL).
 

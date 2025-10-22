@@ -68,7 +68,7 @@ DATABASE_URL="file:./dev.db"
 4️⃣ Generate the database and Prisma Client:
 
 ```bash
-npx prisma migrate dev --name init
+npx prisma migrate deploy
 ```
 
 5️⃣ Seed the database with initial products:

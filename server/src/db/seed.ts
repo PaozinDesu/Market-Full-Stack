@@ -3,7 +3,7 @@ import { PrismaClient } from '../../generated/prisma';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Iniciando seed...');
+  console.log('🌱 Initializing seed...');
 
   const categoryNames = [
     'category 1',
@@ -29,8 +29,8 @@ async function main() {
 
     const product = await prisma.product.create({
       data: {
-        name: `Produto ${i}`,
-        description: `Descrição do produto número ${i}`,
+        name: `Product ${i}`,
+        description: `Product description ${i}`,
         image: base64Image,
         price: Number.parseFloat((Math.random() * 500 + 50).toFixed(2)),
         productCategory: {
@@ -45,16 +45,16 @@ async function main() {
     for (let j = 1; j <= 2; j++) {
       await prisma.productOption.create({
         data: {
-          name: `Opção ${j}`,
+          name: `Option ${j}`,
           productId: product.id,
         },
       });
     }
 
-    console.log(`✅ Produto criado: ${product.name}`);
+    console.log(`✅ Product created: ${product.name}`);
   }
 
-  console.log('🎉 Seed concluído com sucesso!');
+  console.log('🎉 Seed done!');
 }
 
 main()

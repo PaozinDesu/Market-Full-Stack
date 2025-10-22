@@ -9,7 +9,7 @@ export function useCart() {
 
   useEffect(() => {
     handleFetchCartItems();
-  }, []);
+  }, [cartItems]);
 
   function handleFetchCartItems() {
     api.get<ICartResponse>('/carts').then((res) => {
@@ -19,5 +19,12 @@ export function useCart() {
     });
   }
 
-  return { cartItems, handleFetchCartItems };
+  function getTotalValue() {
+    return cartItems.reduce(
+      (sum, cartItem) => sum + cartItem.product.price * cartItem.quantity,
+      0,
+    );
+  }
+
+  return { cartItems, handleFetchCartItems, getTotalValue };
 }

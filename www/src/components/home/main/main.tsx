@@ -1,4 +1,3 @@
-import { Filters } from './filter';
 import { Products } from './products';
 
 interface MainProps {
@@ -8,8 +7,7 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ cartModalOpened, setCartModalOpened }) => {
   return (
-    <section className="grid h-full grid-cols-[300px_1fr] grid-rows-subgrid px-6 pt-6">
-      <Filters />
+    <section className="grid h-full grid-cols-[1fr] grid-rows-subgrid px-6 pt-6">
       <Products
         cartModalOpened={cartModalOpened}
         setCartModalOpened={setCartModalOpened}

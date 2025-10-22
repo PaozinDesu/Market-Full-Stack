@@ -6,6 +6,7 @@ import { IProduct } from '@/interfaces/product.interface';
 import { api } from '@/services/api';
 import { formatCurrencyUtil } from '@/utils/formatCurrency.util';
 import { ShoppingBag, ShoppingCart } from 'lucide-react';
+import { toast } from 'sonner';
 
 interface CardProps {
   product: IProduct;
@@ -20,12 +21,13 @@ const Card: React.FC<CardProps> = ({
   handleFetchCartItems,
   setCartModalOpened,
 }) => {
+
   function handleAddToCart() {
     api.post('/carts', { productId: product.id, quantity: 1 }).then(() => {
       handleFetchCartItems();
+      toast.success('Product added to cart!');
     });
   }
-
   function handleOpenCart() {
     setCartModalOpened(true);
   }
@@ -34,7 +36,7 @@ const Card: React.FC<CardProps> = ({
 
   return (
     <div className="flex h-fit w-[300px] flex-col overflow-hidden rounded-2xl bg-slate-100 pb-3 shadow-2xl">
-      <div className="flex h-[160px] w-full items-center justify-center overflow-hidden">
+      <div className="flex w-full items-center justify-center overflow-hidden">
         <img
           className="h-full w-full"
           src={`data:image/jpeg;base64,${product.image}`}

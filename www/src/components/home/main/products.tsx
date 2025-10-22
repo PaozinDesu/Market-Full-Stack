@@ -19,11 +19,12 @@ const Products: React.FC<ProductsProps> = ({
   const { cartItems, handleFetchCartItems } = useCart();
 
   useEffect(() => {
+    if (cartModalOpened) return;
     handleFetchCartItems();
-  }, [cartModalOpened, handleFetchCartItems]);
+  }, [cartModalOpened]);
 
   return (
-    <div className="flex flex-col items-center overflow-x-hidden overflow-y-scroll bg-slate-200 py-6">
+    <div className="flex flex-col items-center overflow-x-hidden overflow-y-scroll rounded-t-2xl bg-slate-200 py-6">
       <div className="grid grid-cols-3 gap-x-12 gap-y-8">
         {products.map((product) => (
           <div key={product.id}>

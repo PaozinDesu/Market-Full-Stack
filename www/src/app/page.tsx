@@ -6,6 +6,7 @@ import { CartModal } from '@/components/modals/cart.modal';
 import { Navbar } from '@/components/navbar';
 import React, { useState } from 'react';
 
+
 const Home: React.FC = () => {
   const [cartModalOpened, setCartModalOpened] = useState(false);
 

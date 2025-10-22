@@ -1,8 +1,32 @@
 'use client';
 
 import { ICart } from '@/interfaces/cart.interface';
+import { api } from '@/services/api';
 import { formatCurrencyUtil } from '@/utils/formatCurrency.util';
 import { Minus, Plus, Trash2 } from 'lucide-react';
+import { toast } from 'sonner';
+
+function handleMinusQuantity(id: string, quantity: number) {
+  const newQauntity = quantity - 1;
+  if (newQauntity < 1) {
+    toast.error('you cannot have less than 1 product');
+    return;
+  }
+  api.put(`/carts/${id}`, { quantity: newQauntity }).then(() => {});
+}
+
+function handlePlusQuantity(id: string, quantity: number) {
+  const newQauntity = quantity + 1;
+  if (newQauntity > 10) {
+    toast.error('you cannot have more than 10 products');
+    return;
+  }
+  api.put(`/carts/${id}`, { quantity: newQauntity }).then(() => {});
+}
+
+function handleRemoveItem(id: string) {
+  api.delete(`/carts/${id}`).then(() => {});
+}
 
 interface CardCartProps {
   cartItem: ICart;
@@ -34,11 +58,18 @@ const CardsCart: React.FC<CardCartProps> = ({ cartItem }) => {
         <Trash2
           size={24}
           className="text-slate-800"
+          onClick={() => handleRemoveItem(cartItem.id)}
         />
         <div className="flex items-center justify-center gap-6 rounded-2xl border-2 border-slate-300 px-2">
-          <Minus className="text-slate-800" />
-          <h2 className="text-2xl text-slate-800">1</h2>
-          <Plus className="text-slate-800" />
+          <Minus
+            className="text-slate-800"
+            onClick={() => handleMinusQuantity(cartItem.id, cartItem.quantity)}
+          />
+          <h2 className="text-2xl text-slate-800">{cartItem.quantity}</h2>
+          <Plus
+            className="text-slate-800"
+            onClick={() => handlePlusQuantity(cartItem.id, cartItem.quantity)}
+          />
         </div>
       </div>
     </div>

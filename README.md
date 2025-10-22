@@ -1,31 +1,31 @@
 # 🛒 DTI Technical Challenge
 
-Bem-vindo(a) ao **DTI Technical Challenge**!  
-Este projeto é composto por um **backend (Node.js + Express + Prisma + SQLite)** e um **frontend (Next.js + React + TypeScript)**.  
-Siga os passos abaixo para configurar e executar o projeto corretamente. 🚀
+Welcome to the **DTI Technical Challenge**!  
+This project is composed of a **backend (Node.js + Express + Prisma + SQLite)** and a **frontend (Next.js + React + TypeScript)**.  
+Follow the steps below to set up and run the project correctly. 🚀
 
 ---
 
-## ⚙️ Pré-requisitos
+## ⚙️ Prerequisites
 
-Antes de começar, certifique-se de ter instalado em sua máquina:
+Before you begin, make sure you have installed the following on your machine:
 
-- **[Node.js](https://nodejs.org/en/download)** (v18+ recomendado) 
-- **npm** (ou **yarn**, se preferir)  
-- **[Git](https://git-scm.com/install/)**
-- Uma **IDE** de sua preferência (ex: [VS Code](https://code.visualstudio.com/download))
+- **[Node.js](https://nodejs.org/en/download)** (v18+ recommended)  
+- **npm** (or **yarn**, if you prefer)  
+- **[Git](https://git-scm.com/install/)**  
+- An **IDE** of your choice (e.g. [VS Code](https://code.visualstudio.com/download))
 
 ---
 
-## 📂 Clonando o projeto
+## 📂 Cloning the Project
 
-Abra o terminal na pasta onde deseja salvar o projeto, por exemplo:
+Open the terminal in the folder where you want to save the project, for example:
 
 ```bash
-cd "C:\Users\SEU_USUARIO\Documents\Projetos"
+cd "C:\Users\YOUR_USER\Documents\Projects"
 ```
 
-E clone o repositório:
+Then clone the repository:
 
 ```bash
 git clone https://github.com/PaozinDesu/DTI-Technical-Challange.git
@@ -33,119 +33,119 @@ cd DTI-Technical-Challange
 code .
 ```
 
-Uma nova janela do Visual Studio Code será aberta — você pode fechar a anterior.
+A new Visual Studio Code window will open — you can close the previous one.
 
-Caso não esteja usando o Visual Studio Code, basta abrir a pasta gerada pelo clone com sua IDE.
-
----
-
-## 🧠 Organização dos Terminais
-
-Para facilitar o desenvolvimento, **abra 3 terminais** na sua IDE.
+If you’re not using Visual Studio Code, just open the generated folder with your preferred IDE.
 
 ---
 
-### 🖥️ Terminal 1 – Banco de Dados (Prisma Studio)
+## 🧠 Terminal Organization
 
-1️⃣ Acesse a pasta do backend:
+To make development easier, open 3 terminals in your IDE.
+
+---
+
+### 🖥️ Terminal 1 – Database (Prisma Studio)
+
+1️⃣ Go to the backend folder:
 
 ```bash
 cd server
 ```
 
-2️⃣ Instale as dependências:
+2️⃣ Install dependencies:
 
 ```bash
 npm install
 ```
 
-3️⃣ Crie um arquivo `.env` na **raiz da pasta `server`** com o seguinte conteúdo:
+3️⃣ Create a .env file in the root of the server folder with the following content:
 
 ```env
 DATABASE_URL="file:./dev.db"
 ```
 
-4️⃣ Gere o banco de dados e o Prisma Client:
+4️⃣ Generate the database and Prisma Client:
 
 ```bash
 npx prisma migrate dev --name init
 ```
 
-5️⃣ Popule o banco de dados com produtos iniciais:
+5️⃣ Seed the database with initial products:
 
 ```bash
 npm run seed
 ```
 
-6️⃣ Inicie o Prisma Studio (interface visual do banco de dados):
+6️⃣ Start Prisma Studio (visual database interface):
 
 ```bash
 npx prisma studio
 ```
 
-Acesse em:  
+Access at:
 🔗 **http://localhost:5555**
 
 ---
 
 ### ⚡ Terminal 2 – Backend (API)
 
-1️⃣ Acesse novamente a pasta do backend:
+1️⃣ Go again to the backend folder:
 
 ```bash
 cd server
 ```
 
-2️⃣ Inicie o servidor:
+2️⃣ Start the server:
 
 ```bash
 npm run dev
 ```
 
-O backend ficará disponível em:  
+The backend will be available at:
 🔗 **http://localhost:4000**
 
 ---
 
 ### 💻 Terminal 3 – Frontend (Next.js)
 
-1️⃣ Acesse a pasta do frontend:
+1️⃣ Go to the frontend folder:
 
 ```bash
 cd www
 ```
 
-2️⃣ Instale as dependências:
+2️⃣ Install dependencies:
 
 ```bash
 npm install
 ```
 
-3️⃣ Execute o frontend:
+3️⃣ Run the frontend:
 
 ```bash
 npm run dev
 ```
 
-O frontend será iniciado em:  
+The frontend will start at:
 🔗 **http://localhost:3000**
 
 ---
 
-## 🧩 Utilizando o projeto
+## 🧩 Using the Project
 
-Agora é só abrir o navegador e acessar:  
+Now just open your browser and go to: 
 👉 **[http://localhost:3000](http://localhost:3000)**
 
-Você poderá:
-- 🛍️ Adicionar produtos ao carrinho  
-- ➕ Alterar quantidades  
-- 💳 Finalizar compras  
-- 🧾 Acompanhar as alterações diretamente no **Prisma Studio**
+You can:
+- 🛍️ Add products to the cart
+- ➕ Change quantities
+- 💳 Complete purchases  
+- 🧾 Track changes directly in Prisma Studio
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+## 🧰 Technologies Used
 
 **Backend**
 - Node.js + Express  

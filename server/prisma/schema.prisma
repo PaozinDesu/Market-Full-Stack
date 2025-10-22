@@ -15,17 +15,28 @@ datasource db {
 }
 
 model Product {
-  id          String @id @default(uuid())
+  id          String  @id @default(uuid())
   name        String
   description String
   price       Float
-  image       String // converter em Base64 
+  image       String?
 
+  productOption   ProductOption[]
   productCategory ProductCategory[]
   cart            Cart[]
   order           Order[]
 
   @@map("product")
+}
+
+model ProductOption {
+  id        String @id @default(uuid())
+  name      String
+  productId String @map("fk_product")
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("product_option")
 }
 
 model Category {
@@ -48,6 +59,8 @@ model ProductCategory {
   @@unique([productId, categoryId])
   @@map("product_category")
 }
+
+// Sub-Category
 
 model Cart {
   id        String @id @default(uuid())

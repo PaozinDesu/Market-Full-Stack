@@ -1,6 +1,10 @@
 import { Cog, Hamburger, ShoppingCart } from 'lucide-react';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  setCartModalOpened: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setCartModalOpened }) => {
   return (
     <nav className="flex h-20 items-center justify-between bg-zinc-950 px-16">
       <div className="flex items-center gap-3 text-cyan-500">
@@ -22,6 +26,7 @@ const Navbar: React.FC = () => {
           strokeWidth={2}
           size={32}
           className="icons text-slate-200"
+          onClick={() => setCartModalOpened(true)}
         />
       </div>
     </nav>

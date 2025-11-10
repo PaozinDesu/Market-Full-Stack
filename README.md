@@ -1,6 +1,6 @@
 # 🛒 ECommerce Full-Stack
 
-Welcome to the **DTI Technical Challenge**!  
+Welcome to the **ECommerce Full-Stack**!  
 This project is composed of a **backend (Node.js + Express + Prisma + SQLite)** and a **frontend (Next.js + React + TypeScript)**.  
 Follow the steps below to set up and run the project correctly. 🚀
 

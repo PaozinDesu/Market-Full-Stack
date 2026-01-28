@@ -17,10 +17,6 @@ const Footer: React.FC = () => {
         />
         <h1 className="text-2xl text-slate-200">Dti</h1>
       </div>
-      <p className="text-slate-100">
-        dti 2025 @ todos os direitos reservados. Política de Privacidade. Uma
-        empresa do grupo WPP. Mídia por ​Melt
-      </p>
       <div className="flex gap-3">
         <Instagram
           strokeWidth={2.5}

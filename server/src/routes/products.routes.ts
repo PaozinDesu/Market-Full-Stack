@@ -6,7 +6,6 @@ const router = Router();
 
 router.post('/', new CreateProductController().handle);
 router.get('/', new GetAllProductsController().handle);
-router.get('/', new GetAllProductsController().handle);
 
 export function registerProductsRoutes(app: Express) {
   app.use('/products', router);

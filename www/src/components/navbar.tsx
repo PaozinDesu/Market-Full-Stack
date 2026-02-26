@@ -16,12 +16,11 @@ const Navbar: React.FC<NavbarProps> = ({ setCartModalOpened }) => {
         <h1 className="text-[32px] font-medium">DTI Lunchs</h1>
       </div>
       <div className="flex gap-4">
-        {' '}
         <Cog
           size={32}
           strokeWidth={2}
           className="icons text-slate-200"
-        />{' '}
+        />
         <ShoppingCart
           strokeWidth={2}
           size={32}

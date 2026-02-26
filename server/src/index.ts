@@ -17,6 +17,7 @@ function bootstrap() {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));
 
+  // registra as rotas que vem da pasta routes
   registerProductsRoutes(app);
   registerCategoriesRoutes(app);
   registerSubCategoriesRoutes(app);

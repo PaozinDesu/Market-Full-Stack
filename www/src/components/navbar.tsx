@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ setCartModalOpened }) => {
           strokeWidth={2}
           className="text-cyan-500"
         />
-        <h1 className="text-[32px] font-medium">DTI Lunchs</h1>
+        <h1 className="text-[32px] font-medium">Lunchs</h1>
       </div>
       <div className="flex gap-4">
         {' '}

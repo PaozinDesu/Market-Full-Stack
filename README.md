@@ -28,7 +28,7 @@ cd "C:\Users\YOUR_USER\Documents\Projects"
 Then clone the repository:
 
 ```bash
-git clone https://github.com/PaozinDesu/DTI-Technical-Challange.git
+git clone https://github.com/PaozinDesu/Market-Full-Stack.git
 cd DTI-Technical-Challange
 code .
 ```

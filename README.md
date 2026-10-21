@@ -29,7 +29,7 @@ Then clone the repository:
 
 ```bash
 git clone https://github.com/PaozinDesu/Market-Full-Stack.git
-cd DTI-Technical-Challange
+cd Market-Full-Stack
 code .
 ```
 
